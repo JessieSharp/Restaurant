@@ -1,0 +1,117 @@
+﻿.main {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/coffee.jpg');
+    content: ' ';
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+.bglayer {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.reservationBackground {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/blur-background-of-pub-restaurant-with-wood-table-628137314_2125x1416.jpeg');
+    content: ' ';
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+body {
+    font-family: 'Raleway', sans-serif !important;
+}
+.pb-15p {
+    padding-bottom: 15%;
+}
+
+.pt-15p {
+    padding-top: 15%;
+}
+
+.pb-10p {
+    padding-bottom: 10%;
+}
+
+.pt-10p {
+    padding-top: 10%;
+}
+
+.pr-10p {
+    padding-right: 10%;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+@media (max-width: 575.98px) {
+    .bgimg-1 {
+        background-image: url('../images/desk_restaurant_wine_glasses_plates_flowers_roses_80713_1920x1080.jpg');
+        min-height: 900px;
+    }
+    .bgimg-2 {
+        background-image: url('../images/dinner_wallpapers 4.jpg');
+        min-height: 1200px;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .bgimg-1 {
+        background-image: url('../images/desk_restaurant_wine_glasses_plates_flowers_roses_80713_1920x1080.jpg');
+        min-height: 600px;
+    }
+
+    .bgimg-2 {
+        background-image: url('../images/dinner_wallpapers 4.jpg');
+        min-height: 600px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+a.disabled {
+    /* Make the disabled links grayish*/
+    color: gray;
+    /* And disable the pointer events */
+    pointer-events: none;
+}
+
+body, html, .container-fluid {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100vh;
+    max-height: 100%;
+}
+
+main {
+    height: 100%;
+    overflow-y: auto;
+}
+

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <UserSecretsId>aeb4d288-26c5-4054-94ef-02f1f133e07c</UserSecretsId>
+    <AssemblyName>Restaurant</AssemblyName>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\Chart.js\Chart.bundle.js" />
+    <None Include="wwwroot\lib\Chart.js\Chart.bundle.min.js" />
+    <None Include="wwwroot\lib\Chart.js\Chart.js" />
+    <None Include="wwwroot\lib\Chart.js\Chart.min.js" />
+    <None Include="wwwroot\lib\Chart.js\LICENSE.md" />
+    <None Include="wwwroot\lib\Chart.js\samples\advanced\content-security-policy.js" />
+    <None Include="wwwroot\lib\Chart.js\samples\charts\area\analyser.js" />
+    <None Include="wwwroot\lib\Chart.js\samples\logo.svg" />
+    <None Include="wwwroot\lib\Chart.js\samples\samples.js" />
+    <None Include="wwwroot\lib\Chart.js\samples\utils.js" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0-rc1.final" />
+  </ItemGroup>
+
+</Project>

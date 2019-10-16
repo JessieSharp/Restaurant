@@ -1,0 +1,31 @@
+﻿@model ReservationViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="col-lg-3 col-sm-12 pt-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="card-title">@Model.FirstName @Model.LastName</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@Model.Date</h6>
+            <p class="card-text">
+                <span>
+                    Contact number: @Model.ContactNumber
+                </span>
+                <br />
+                <span>
+                    Table size: @Model.TableSize
+                </span>
+                <br />
+            </p>
+            @if (Model.IsDeleted)
+            {
+                @Html.ActionLink("Delete", "DeleteReservation", "Admin", Model, new {@class="card-link disabled"})
+            }
+            else
+            {
+                @Html.ActionLink("Delete", "DeleteReservation", "Admin", Model,  new {@class="card-link"})
+            }
+            @*<a asp-controller="Admin" asp-action="DeleteReservation" class="card-link">Delete </a>*@
+        </div>
+    </div>
+</div>

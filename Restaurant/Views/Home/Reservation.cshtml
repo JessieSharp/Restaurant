@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Reservation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ReservationViewModel
+
+
+
+<div class="container" style="height: calc(100vh - 106px)">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 col-sm-12">
+            @if (ViewBag.ReservationResult == true)
+            {
+                <div class="alert alert-success mt-3" role="alert">
+                    Your reservation has been sent
+                </div>
+            }
+            <h1 class="pt-3">Reservation</h1>
+            <form id="" method="post" asp-action="Reservation" asp-controller="Home">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="FirstName" for="inputFirstName">First name</label>
+                            <input asp-for="FirstName" type="text" id="inputFirstName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="LastName" for="inputLastName">Last name</label>
+                            <input asp-for="LastName" type="text" id="inputLastName" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ContactNumber" for="inputContactNumber">Contact number</label>
+                            <input asp-for="ContactNumber" type="text" id="inputContactNumber" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="TableSize" for="selectTableSize">Table size</label>
+                            <select asp-for="TableSize" class="form-control" id="selectTableSize">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Date" for="inputDateAndTime">Date and Time</label>
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input asp-for="Date" type="text" id="inputDateAndTime" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fas fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $(function() {
+                            $('#datetimepicker1').datetimepicker();
+                        });
+                    </script>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

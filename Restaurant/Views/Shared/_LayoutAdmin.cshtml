@@ -1,0 +1,103 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Identity
+@using Restaurant.Areas.Identity.Data
+@inject UserManager<RestaurantUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Restaurant</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <environment include="Development">
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/lib/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/moment.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <script src="~/lib/Chart.js/Chart.bundle.js"></script>
+    <link rel="stylesheet" href="~/lib/Chart.js/Chart.css" />
+   
+</head>
+<body>
+<div class="container-fluid h-100">
+        <div class="row wrapper h-100">
+            <aside class="col-12 col-sm-2 p-0 bg-dark">
+                <nav class="navbar navbar-expand-sm navbar-dark bg-dark align-items-start flex-sm-column flex-row">
+                    <h3 class="pt-1 mb-0 text-white">@UserManager.FindByEmailAsync(@User.Identity.Name).Result.FirstName @UserManager.FindByEmailAsync(@User.Identity.Name).Result.LastName</h3>
+                    <p class="mt-0 text-white-50">@User.Identity.Name</p>
+                    <ahref class="navbar-toggler" data-toggle="collapse" data-target=".sidebar">
+                        <span class="navbar-toggler-icon"></span>
+                    </ahref>
+                    <div class="collapse navbar-collapse sidebar">
+                        <ul class="flex-column navbar-nav w-100 justify-content-between">
+                            <li>
+                                <h4 class="mb-0 mt-5 text-white">Restaurant</h4>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Index"><i class="fa fa-home fa-fw pr-4"></i>Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Reservations"><i class="fa fa-list fa-fw pr-4"></i>Reservations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Events"><i class="fa fa-star fa-fw pr-4"></i>Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Menu"><i class="fa fa-bars fa-fw pr-4"></i>Menu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Home" asp-action="Index"><i class="fa fa-undo fa-fw pr-4"></i>Return to page</a>
+                            </li>
+                            <li>
+                                <h4 class="mb-0 mt-5 text-white">Account</h4>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Index"><i class="fa fa-user fa-fw pr-4"></i>Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Reservations"><i class="fa fa-lock fa-fw pr-4"></i>Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" method="post" id="logoutForm" class="ml-auto bg-dark">
+                                    <button type="submit" class="btn btn-link nav-link"><i class="fa fa-sign-out-alt fa-fw pr-4"></i>Logout</button>
+                                </form>
+                            </li>
+                            <li>
+                                <h4 class="mb-0 mt-5 text-white">Admin</h4>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Index"><i class="fa fa-users fa-fw pr-4"></i>Employees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Admin" asp-action="Index"><i class="fa fa-user fa-fw pr-4"></i>abc</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <main class="col">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+@RenderSection("Scripts", required: false)
+</body>
+</html>

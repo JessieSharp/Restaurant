@@ -1,0 +1,50 @@
+﻿@using Restaurant.Controllers
+@model List<ReservationViewModel>
+@{
+    ViewData["Title"] = "Reservations";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<ul class="nav nav-tabs pt-3" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">On hold</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Out of date</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Deleted</a>
+    </li>
+</ul>
+
+@if (Model != null)
+{
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+                @foreach (var item in Model.Where(x => x != null && !x.IsDeleted && DateTime.Parse(x.Date) > DateTime.Now))
+                {
+                    <partial name="Partials/_ReservationCard" model='@item' />
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+                @foreach (var item in Model.Where(x => x != null && !x.IsDeleted && DateTime.Parse(x.Date) < DateTime.Now))
+                {
+                    <partial name="Partials/_ReservationCard" model='@item'/>
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="row">
+                @foreach (var item in Model.Where(x =>  x != null && x.IsDeleted))
+                {
+                    <partial name="Partials/_ReservationCard" model='@item'/>
+                }
+            </div>
+        </div>
+    </div>
+
+}
+
