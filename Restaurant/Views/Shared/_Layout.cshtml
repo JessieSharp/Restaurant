@@ -7,8 +7,15 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="~/lib/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/holderjs/holder.js"></script>
+    <script>
+        Holder.addTheme("dark", {
+            bg: "#1e1e1e",
+            fg: "#353536"
+        });
+    </script>
+
     <script type="text/javascript" src="~/lib/bootstrap/dist/js/moment.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -16,11 +23,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
     <script src="~/lib/Chart.js/Chart.bundle.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="~/lib/Chart.js/Chart.css" />
 </head>
 <body>
 
-<nav class="navbar navbar-dark navbar-expand-sm sticky-top bg-dark">
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark">
     <div class="container">
         <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">SNACKS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +43,10 @@
                     <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="Reservation">RESERVATION</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="#">MENU</a>
+                    <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="Menu">MENU</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="#">GALLERY</a>
+                    <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="Gallery">GALLERY</a>
                 </li>
                 <li class="nav-item px-2">
                     <a class="nav-link text-white small" asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>

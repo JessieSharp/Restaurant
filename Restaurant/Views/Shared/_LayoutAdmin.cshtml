@@ -58,9 +58,6 @@
                                 <a class="nav-link" asp-controller="Admin" asp-action="Reservations"><i class="fa fa-list fa-fw pr-4"></i>Reservations</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="Admin" asp-action="Events"><i class="fa fa-star fa-fw pr-4"></i>Events</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" asp-controller="Admin" asp-action="Menu"><i class="fa fa-bars fa-fw pr-4"></i>Menu</a>
                             </li>
                             <li class="nav-item">
@@ -77,7 +74,7 @@
                             </li>
                             <li class="nav-item">
                                 <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" method="post" id="logoutForm" class="ml-auto bg-dark">
-                                    <button type="submit" class="btn btn-link nav-link"><i class="fa fa-sign-out-alt fa-fw pr-4"></i>Logout</button>
+                                    <button type="submit" class="btn btn-link nav-link"><i class="fa fa-sign-out fa-fw pr-4"></i>Logout</button>
                                 </form>
                             </li>
                             <li>
